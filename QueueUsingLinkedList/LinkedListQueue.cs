@@ -7,8 +7,11 @@ namespace QueueUsingLinkedList
     class LinkedListQueue
     {
         Node head = null;
-
-        internal void Enqueue(int data)
+        /// <summary>
+        /// Enqueue will internally call append method on linked list
+        /// </summary>
+        /// <param name="data"></param>
+        public void Enqueue(int data)
         {
             Node node = new Node(data);
             if (head == null)
@@ -25,8 +28,10 @@ namespace QueueUsingLinkedList
             Console.WriteLine("{0} inserted into queue ", node.data);
 
         }
-
-        internal void Display()
+        /// <summary>
+        /// Display method
+        /// </summary>
+        public void Display()
         {
             Node temp = this.head;
             if (temp == null)

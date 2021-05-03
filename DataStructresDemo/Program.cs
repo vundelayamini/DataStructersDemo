@@ -6,7 +6,6 @@ namespace DataStructresDemo
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello world!");
             LinkedList list = new LinkedList();
             list.Add(56);
             list.Add(30);

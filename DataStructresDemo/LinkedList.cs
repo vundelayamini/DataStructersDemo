@@ -7,8 +7,12 @@ namespace DataStructresDemo
     class LinkedList
     {
 
-        internal Node head; //new 
-        internal void Add(int data)
+        public Node head; //new 
+        /// <summary>
+        /// Adding Method
+        /// </summary>
+        /// <param name="data"></param>
+        public void Add(int data)
         {
             Node node = new Node(data);
             if (this.head == null)
@@ -24,8 +28,10 @@ namespace DataStructresDemo
             }
             Console.WriteLine("{0} inserted into the linked list", node.data);
         }
-
-        internal void Display()
+        /// <summary>
+        /// Display method
+        /// </summary>
+        public void Display()
         {
             Node temp = this.head;
             if (temp == null)
@@ -39,8 +45,14 @@ namespace DataStructresDemo
                 temp = temp.next; //temp=null
             }
         }
-        // 3 15
-        internal Node InsertAtParticularPosition(int position, int data)
+
+        /// <summary>
+        /// Insert 30 between 56 and 70
+        /// </summary>
+        /// <param name="position"></param>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        public Node InsertAtParticularPosition(int position, int data)
         {
             if (position < 1)
                 Console.WriteLine("Invalid position");
@@ -70,22 +82,34 @@ namespace DataStructresDemo
             }
             return head;
         }
-
-        internal Node RemoveFirstNode()
+        /// <summary>
+        /// Remove the first node
+        /// </summary>
+        /// <returns></returns>
+        public Node RemoveFirstNode()
         {
             if (this.head == null)
                 return null;
             this.head = this.head.next;
             return this.head;
         }
-
-        internal Node RemovaLastNode()
+        /// <summary>
+        /// Remove the last node
+        /// </summary>
+        /// <returns></returns>
+        public Node RemovaLastNode()
         {
-            if (head == null)
-                return null;
-            if (head.next == null)
-                return null;
             Node newNode = head;
+
+            if (this.head == null)
+            {
+                return null;
+            }
+            if (head.next == null)
+            {
+                this.head = null;
+                return null;
+            }
             while (newNode.next.next != null)
             {
                 newNode = newNode.next;
@@ -93,25 +117,30 @@ namespace DataStructresDemo
             newNode.next = null;
             return head;
         }
-
-        internal Node Search(int value)
+        /// <summary>
+        /// Search Method to find node with value 30
+        /// </summary>
+        /// <param name="value"></param>
+        public void Search(int value)
         {
-            while (this.head != null)
+            Node temp = this.head;
+            while (temp != null)
             {
-                if (this.head.data == value)
+                if (temp.data == value)
                 {
-                    return this.head;
+                    Console.WriteLine("\nFound" + value);
+                    return;
                 }
-                this.head = this.head.next;
+                temp = temp.next;
             }
-            return null;
+
+
         }
 
 
+
+
     }
-
-
-
 }
 
 

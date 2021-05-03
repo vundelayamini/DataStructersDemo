@@ -6,14 +6,15 @@ namespace StackUsingLinkedList
 {
     class LinkedListStack
     {
-        private Node top;
-        public LinkedListStack()
-        {
-            this.top = null;
-        }
-
+        public  Node top;
+      
+        /// <summary>
+        /// UC1
+        /// pushing the  new ndata
+        /// </summary>
+        /// <param name="value"></param>
         //30
-        internal void Push(int value)
+        public  void Push(int value)
         {
             Node node = new Node(value);
             if (this.top == null)
@@ -23,6 +24,9 @@ namespace StackUsingLinkedList
             this.top = node;
             Console.WriteLine("{0} pushed to stack ", value);
         }
+        /// <summary>
+        /// Display Method
+        /// </summary>
         public void Display()
         {
             Node temp = this.top;
@@ -32,8 +36,10 @@ namespace StackUsingLinkedList
                 temp = temp.next;//1400
             }
         }
-
-        internal void Peek()
+        /// <summary>
+        /// Peak  from the stack till it is empty
+        /// </summary>
+        public void Peek()
         {
             if (this.top == null)
             {
@@ -42,8 +48,10 @@ namespace StackUsingLinkedList
             }
             Console.WriteLine("{0} is in the top of the stack ", this.top.data);//NullrefrenceRxception
         }
-
-        internal void Pop()
+        /// <summary>
+        /// Pop from the stack
+        /// </summary>
+        public void Pop()
         {
             if (this.top == null)
             {
@@ -53,9 +61,11 @@ namespace StackUsingLinkedList
             Console.WriteLine("Value popped is {0} ", this.top.data);
             this.top = this.top.next;
         }
-
-        internal void IsEmpty()
-        {
+        /// <summary>
+        /// Empty method
+        /// </summary>
+      public void IsEmpty()
+      {
             while (this.top != null)
             {
                 Peek();
